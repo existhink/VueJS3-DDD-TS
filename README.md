@@ -61,10 +61,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 git clone https://github.com/existhink/VueJS3-DDD-TS.git
 ```
 
-2. Install dependencies using pnpm
+2. Install dependencies using bun
 
 ```shell
-pnpm or pnpm install
+bun or bun install
 ```
 
 3. Change **.env.local.example** to **.env.local**
@@ -74,7 +74,7 @@ You must change the .env.local.example to .env.local and match it with you local
 4. Run project for development
 
 ```shell
-pnpm start:dev
+bun start:dev
 ```
 
 ---
@@ -84,7 +84,7 @@ pnpm start:dev
 1. Build the app
 
 ```shell
-pnpm build
+bun build
 ```
 
 ## 🧪 Test
@@ -92,7 +92,7 @@ pnpm build
 Run test across all files
 
 ```shell
-pnpm test:unit
+bun test:unit
 ```
 
 ---
