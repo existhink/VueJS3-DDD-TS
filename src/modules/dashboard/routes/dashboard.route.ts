@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router';
 
 // Components
-import { AppBaseWrapper } from '@/app/components/base';
+import AppBaseWrapper from '@/app/components/base/AppBaseWrapper.vue';
 
 // Constants
 import { LAYOUT_OPTIONS } from '@/app/constants';

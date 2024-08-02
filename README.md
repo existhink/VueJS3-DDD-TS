@@ -12,29 +12,35 @@ This application use DDD pattern. Here you can learn a little about DDD pattern,
 
 | Technology  | Description                                                                | Version |
 | ----------- | -------------------------------------------------------------------------- | ------- |
-| TailwindCSS | A utility-first CSS framework for rapidly building custom user interfaces. | ^3.3.3  |
-| Typescript  | JavaScript with syntax for types                                           | ^5.0.2  |
-| Vitest      | A blazing fast unit test framework powered by Vite                         | ^0.34.6 |
-| Vite        | Native-ESM powered web dev build tool                                      | ^4.4.5  |
-| VueJS       | The progressive JavaScript framework for building modern web UI.           | ^3.3.4  |
+| TailwindCSS | A utility-first CSS framework for rapidly building custom user interfaces. | latest  |
+| Typescript  | JavaScript with syntax for types                                           | latest  |
+| Vitest      | A blazing fast unit test framework powered by Vite                         | latest  |
+| Vite        | Native-ESM powered web dev build tool                                      | latest  |
+| VueJS       | The progressive JavaScript framework for building modern web UI.           | latest  |
 
 ## 🏅 Dependencies & Libraries
 
 | Library                         | Description                                                                                                    | Version |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------- |
-| @commitlint/cli                 | Lint our commit messages                                                                                       | ^18.2.0 |
-| @commitlint/config-conventional | Shareable commitlint config enforcing conventional commits                                                     | ^18.1.0 |
-| @tailwindcss/forms              | A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities. | ^0.5.6  |
-| @vuelidate/core                 | Simple, lightweight model-based validation for Vue.js                                                          | ^2.0.3  |
-| @vuelidate/validators           | Standalone validators package for Vuelidate.                                                                   | ^2.0.4  |
-| axios                           | Promise based HTTP client for the browser and node.js                                                          | ^1.5.1  |
-| husky                           | Modern native Git hooks made easy                                                                              | ^8.0.3  |
-| mitt                            | Tiny 200b functional event emitter / pubsub.                                                                   | ^3.0.1  |
-| pinia                           | Intuitive, type safe and flexible Store for Vue.                                                               | ^2.1.7  |
-| pinia-plugin-persistedstate     | Configurable persistence and rehydration of Pinia stores.                                                      | ^3.2.0  |
-| tailwindcss                     | A utility-first CSS framework for rapidly building custom user interfaces.                                     | ^3.3.3  |
-| vue                             | The progressive JavaScript framework for building modern web UI.                                               | ^3.3.4  |
-| vue-router                      | Expressive, configurable and convenient routing for Vue.js                                                     | ^3.3.4  |
+| @commitlint/cli                 | Lint our commit messages                                                                                       | latest  |
+| @commitlint/config-conventional | Shareable commitlint config enforcing conventional commits                                                     | latest  |
+| @tailwindcss/forms              | A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities. | latest  |
+| @vuelidate/core                 | Simple, lightweight model-based validation for Vue.js                                                          | latest  |
+| @vuelidate/validators           | Standalone validators package for Vuelidate.                                                                   | latest  |
+| axios                           | Promise based HTTP client for the browser and node.js                                                          | latest  |
+| husky                           | Modern native Git hooks made easy                                                                              | latest  |
+| mitt                            | Tiny 200b functional event emitter / pubsub.                                                                   | latest  |
+| pinia                           | Intuitive, type safe and flexible Store for Vue.                                                               | latest  |
+| pinia-plugin-persistedstate     | Configurable persistence and rehydration of Pinia stores.                                                      | latest  |
+| tailwindcss                     | A utility-first CSS framework for rapidly building custom user interfaces.                                     | latest  |
+| unplugin-auto-import            | Auto import APIs on-demand for Vite, Webpack, Rspack, Rollup and esbuild.                                      | latest  |
+| unplugin-imagemin               | Unplugin compression Image Compression plugin based on squoosh and sharp.                                      | latest  |
+| unplugin-vue-components         | Components auto importing for Vue                                                                              | latest  |
+| vite-plugin-compression         | Use gzip or brotli to compress resources.                                                                      | latest  |
+| vite-plugin-remove-console      | A vite plugin that remove the types of console in the production environment                                   | latest  |
+| vite-plugin-svg-icons           | Vite Plugin for fast creating SVG sprites.                                                                     | latest  |
+| vue                             | The progressive JavaScript framework for building modern web UI.                                               | latest  |
+| vue-router                      | Expressive, configurable and convenient routing for Vue.js                                                     | latest  |
 
 ## 🛠️ Setup Project
 

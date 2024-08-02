@@ -3,7 +3,12 @@
   "env": {
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:vue/vue3-recommended", "@vue/eslint-config-prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/eslint-config-prettier",
+    "./.eslintrc-auto-import.json"
+  ],
   "rules": {
     "vue/component-tags-order": [
       "error",

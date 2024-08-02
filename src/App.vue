@@ -1,16 +1,14 @@
 <template>
-  <component :is="layout" />
+  <section id="root" class="relative inset-0 z-0">
+    <component :is="layout" />
 
-  <Teleport to="body">
-    <AppBaseToast />
-  </Teleport>
+    <Teleport to="body">
+      <AppBaseToast />
+    </Teleport>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { computed } from 'vue';
-import { AppBaseToast } from './app/components/base';
-
 const route = useRoute();
 
 const layout = computed(() => {

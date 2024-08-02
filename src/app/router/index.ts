@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory, Router, RouteRecordRaw } from 'vue-router';
 
 // Components
-import { AppCommonNotFound, AppCommonUnauthorized } from '../components/common';
+import AppCommonNotFound from '../components/common/AppCommonNotFound.vue';
+import AppCommonUnauthorized from '../components/common/AppCommonUnauthorized.vue';
 
 // Stores
 import { useAuthenticationStore } from '@/modules/authentication/store';
@@ -16,7 +17,6 @@ const loadAllRoutes = async (): Promise<Router> => {
 
   for (const path in modules) {
     const module = await modules[path]();
-    console.log((module as { default: RouteRecordRaw[] }).default, 'module');
     routes.push(...(module as { default: RouteRecordRaw[] }).default);
   }
 

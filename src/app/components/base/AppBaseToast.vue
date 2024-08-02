@@ -50,8 +50,6 @@
 
 <script setup lang="ts">
 import eventBus from '@/plugins/mitt';
-import { computed, type ComputedRef, ref } from 'vue';
-import { EToastPosition, EToastType } from '@/app/constants/toast.constant';
 
 // Interfaces
 interface IProps {

@@ -15,6 +15,9 @@ import eventBus from './plugins/mitt';
 // Stylesheets
 import './style.css';
 
+// SVG Icons
+import 'virtual:svg-icons-register';
+
 const initialize = async () => {
   const app = createApp(App);
   const router = await loadAllRoutes();

@@ -11,14 +11,12 @@
 </template>
 
 <script setup lang="ts">
-import { ComputedRef, computed } from 'vue';
-
 // Constants
-import { VALIDATION_MESSAGE } from '@/app/constants';
 import { BaseValidation, ErrorObject } from '@vuelidate/core';
-import { replaceParams } from '@/app/helper';
 
-// Interfaces
+/**
+ * @description Define the props interface
+ */
 interface IProps {
   classLabel?: string;
   isHideErrorMessage?: boolean;

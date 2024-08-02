@@ -3,7 +3,10 @@
     <nav class="px-4 mx-auto max-w-screen-2xl lg:px-24 lg:pt-7 pt-5">
       <div class="flex flex-col w-full lg:flex-row lg:items-center gap-5 divide-gray-700 lg:divide-x">
         <div class="flex items-center justify-between flex-none">
-          <div class="text-xl text-white font-bold">Apiiyu.</div>
+          <div class="flex items-center gap-2 text-xl text-white font-bold">
+            <AppBaseSvg name="icon-checkmark" />
+            Apiiyu.
+          </div>
           <div>
             <button class="block p-1 outline-none lg:hidden mobile-menu-button" data-target="#navigation">
               <svg
@@ -77,10 +80,7 @@
           </div>
         </div>
         <div class="col-span-12 md:col-span-7 lg:col-span-6 lg:mt-0 mt-14">
-          <img
-            src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-kodechamp/kodechamp-header.png"
-            alt="headerly-kodechamp"
-          />
+          <img src="@/app/assets/images/hero.png" alt="headerly-kodechamp" />
         </div>
       </div>
     </main>

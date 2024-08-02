@@ -1,33 +1,15 @@
 import type { App } from 'vue';
 
-// Components
-import { AppBaseFormGroup, AppBaseWrapper } from './base';
-
-// Commons
-import { AppCommonEntryPoint, AppCommonNotFound, AppCommonUnauthorized } from './common';
-
 // Layouts
 import { AppLayoutDefault, AppLayoutEmpty } from './layouts';
 
 /**
- * @description Register all components
+ * @description Register the components for make it globally available.
+ *
+ * @note We just need to import the layout components or the component that we want to make dynamically using <component :is="component" /> in the template. We've already used the Vite plugin to automatically import the components from the directory.
  */
 export default (app: App): void => {
-  /**
-   * @description Auto load all components
-   */
-  // const listOfComponents: Record<string, () => Promise<unknown>> = import.meta.glob('./**/*.vue');
-
-  // Base Components
-  app.component('AppBaseFormGroup', AppBaseFormGroup);
-  app.component('AppBaseWrapper', AppBaseWrapper);
-
-  // Common components
-  app.component('AppCommonEntryPoint', AppCommonEntryPoint);
-  app.component('AppCommonNotFound', AppCommonNotFound);
-  app.component('AppCommonUnauthorized', AppCommonUnauthorized);
-
-  // Layout components
+  // Layout Components
   app.component('AppLayoutDefault', AppLayoutDefault);
   app.component('AppLayoutEmpty', AppLayoutEmpty);
 };

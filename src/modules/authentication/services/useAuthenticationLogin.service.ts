@@ -54,8 +54,12 @@ export const useAuthenticationLoginService = () => {
       router.push({ name: 'dashboard' });
 
       return Promise.resolve(result);
-    } catch (error) {
-      return Promise.reject(error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return Promise.reject(error);
+      } else {
+        return Promise.reject(new Error(String(error)));
+      }
     }
   };
 
@@ -68,8 +72,12 @@ export const useAuthenticationLoginService = () => {
 
     try {
       await authentication_fetchAuthenticationLogin();
-    } catch (error) {
-      Promise.reject(error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return Promise.reject(error);
+      } else {
+        return Promise.reject(new Error(String(error)));
+      }
     }
   };
 
