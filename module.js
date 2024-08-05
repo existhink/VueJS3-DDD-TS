@@ -12,7 +12,16 @@ if (args.length === 0) {
 
   try {
     fs.mkdirSync(modulePath, { recursive: true });
-    const listFolderNames = ['components', 'constants', 'interfaces', 'routes', 'services', 'store', 'views'];
+    const listFolderNames = [
+      'components',
+      'constants',
+      'interfaces',
+      'locales',
+      'routes',
+      'services',
+      'store',
+      'views',
+    ];
 
     // Create seperates folders and files
     listFolderNames.forEach(folderName => {
@@ -26,6 +35,10 @@ if (args.length === 0) {
           fs.closeSync(fs.openSync(path.join(modulePath, folderName, `index.ts`), 'w'));
           fs.closeSync(fs.openSync(path.join(modulePath, folderName, `${moduleName}.constant.ts`), 'w'));
           fs.closeSync(fs.openSync(path.join(modulePath, folderName, `${moduleName}Api.constant.ts`), 'w'));
+          break;
+        case 'locales':
+          fs.closeSync(fs.openSync(path.join(modulePath, folderName, `${moduleName}.en.json`), 'w'));
+          fs.closeSync(fs.openSync(path.join(modulePath, folderName, `${moduleName}.id.json`), 'w'));
           break;
         case 'routes':
           fs.closeSync(fs.openSync(path.join(modulePath, folderName, `${moduleName}.route.ts`), 'w'));

@@ -71,6 +71,7 @@ declare global {
   const useCssVars: typeof import('vue')['useCssVars']
   const useCurrencyFormat: typeof import('./app/composables/useText')['useCurrencyFormat']
   const useHttpAbort: typeof import('./app/composables/useHttpAbort')['useHttpAbort']
+  const useI18n: typeof import('vue-i18n')['useI18n']
   const useLink: typeof import('vue-router')['useLink']
   const useListenerForm: typeof import('./app/composables/useValidateForm')['useListenerForm']
   const useParseStringHtmlToText: typeof import('./app/composables/useText')['useParseStringHtmlToText']
@@ -165,6 +166,7 @@ declare module 'vue' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrencyFormat: UnwrapRef<typeof import('./app/composables/useText')['useCurrencyFormat']>
     readonly useHttpAbort: UnwrapRef<typeof import('./app/composables/useHttpAbort')['useHttpAbort']>
+    readonly useI18n: UnwrapRef<typeof import('vue-i18n')['useI18n']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useListenerForm: UnwrapRef<typeof import('./app/composables/useValidateForm')['useListenerForm']>
     readonly useParseStringHtmlToText: UnwrapRef<typeof import('./app/composables/useText')['useParseStringHtmlToText']>
@@ -246,6 +248,7 @@ declare module '@vue/runtime-core' {
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrencyFormat: UnwrapRef<typeof import('./app/composables/useText')['useCurrencyFormat']>
     readonly useHttpAbort: UnwrapRef<typeof import('./app/composables/useHttpAbort')['useHttpAbort']>
+    readonly useI18n: UnwrapRef<typeof import('vue-i18n')['useI18n']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useListenerForm: UnwrapRef<typeof import('./app/composables/useValidateForm')['useListenerForm']>
     readonly useParseStringHtmlToText: UnwrapRef<typeof import('./app/composables/useText')['useParseStringHtmlToText']>

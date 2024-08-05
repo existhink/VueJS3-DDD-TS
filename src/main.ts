@@ -9,6 +9,9 @@ import components from './app/components';
 import loadAllRoutes from './app/router';
 import pinia from './app/store';
 
+// Localizations
+import autoLoadLocalization from './plugins/i18n/index';
+
 // Plugins
 import eventBus from './plugins/mitt';
 
@@ -20,10 +23,12 @@ import 'virtual:svg-icons-register';
 
 const initialize = async () => {
   const app = createApp(App);
+  const localization = await autoLoadLocalization();
   const router = await loadAllRoutes();
 
   // Use everything what we have
   app.use(pinia);
+  app.use(localization);
   app.use(router);
 
   // Register global event bus

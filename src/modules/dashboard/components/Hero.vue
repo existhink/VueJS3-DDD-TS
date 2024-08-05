@@ -34,7 +34,9 @@
             class="flex flex-col items-baseline justify-between mx-auto mt-6 lg:flex-row lg:items-center lg:mt-0"
           >
             <div class="flex flex-col w-full text-base font-normal text-white lg:flex-row lg:w-max lg:pl-4">
-              <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">Pricing</a>
+              <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">
+                {{ localization('dashboard.title') }}
+              </a>
               <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">Features</a>
               <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">Showcase</a>
               <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">Tools</a>
@@ -86,3 +88,7 @@
     </main>
   </section>
 </template>
+
+<script setup lang="ts">
+const { t: localization } = useI18n();
+</script>

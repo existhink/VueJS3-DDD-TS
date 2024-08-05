@@ -47,6 +47,11 @@ import removeConsole from 'vite-plugin-remove-console';
  */
 import viteCompression from 'vite-plugin-compression';
 
+/**
+ * @description Vite plugin to use vue-i18n with Vite.
+ */
+import VueI18n from '@intlify/unplugin-vue-i18n/vite';
+
 export default defineConfig({
   plugins: [
     AutoImport({
@@ -55,7 +60,7 @@ export default defineConfig({
       eslintrc: {
         enabled: true, // <-- this
       },
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-i18n', 'vue-router'],
       vueTemplate: true,
     }),
     createSvgIconsPlugin({
@@ -130,6 +135,13 @@ export default defineConfig({
         { from: 'png', to: 'webp' },
         { from: 'JPG', to: 'jpeg' },
       ],
+    }),
+    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      fullInstall: true,
+      include: [path.resolve(__dirname, 'src/**/locales/*.json')],
     }),
     removeConsole(),
     viteCompression(),
