@@ -18,6 +18,7 @@
     "@vuelidate/core": "latest",
     "@vuelidate/validators": "latest",
     "axios": "latest",
+    "chalk": "latest",
     "cz-conventional-changelog": "latest",
     "mitt": "latest",
     "pinia": "latest",
