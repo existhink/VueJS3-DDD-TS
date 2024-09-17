@@ -1,10 +1,10 @@
 <template>
   <section id="dashboard">
-    <Hero />
+    <HeroSection />
   </section>
 </template>
 
 <script setup lang="ts">
 // Components
-import Hero from '../components/Hero.vue';
+import HeroSection from '../components/HeroSection.vue';
 </script>

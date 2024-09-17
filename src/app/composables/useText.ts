@@ -4,7 +4,7 @@ import { DEFAULT_CURRENCY_OPTIONS } from '../constants/useText.constant';
  * @description Handle Capitalize the first letter of each word in a string
  */
 export const useCapitalize = (keywords: string): string => {
-  let capitalized: Array<unknown> = [];
+  const capitalized: Array<unknown> = [];
 
   keywords.split(' ').forEach((word: string) => {
     capitalized.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase());
