@@ -12,6 +12,13 @@ import pinia from './app/store';
 // Plugins
 import eventBus from './plugins/mitt';
 
+// Primevue
+import PrimeVue from 'primevue/config';
+import ConfirmationService from 'primevue/confirmationservice';
+
+// Primevue Theme
+import Aura from '@primevue/themes/aura';
+
 // Stylesheets
 import './style.css';
 
@@ -23,7 +30,16 @@ const initialize = async () => {
   const router = await loadAllRoutes();
 
   // Use everything what we have
+  app.use(ConfirmationService);
   app.use(pinia);
+  app.use(PrimeVue, {
+    theme: {
+      preset: Aura,
+      options: {
+        darkModeSelector: '.my-app-dark',
+      },
+    },
+  });
   app.use(router);
 
   // Register global event bus

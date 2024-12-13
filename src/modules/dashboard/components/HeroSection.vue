@@ -40,12 +40,9 @@
               <a href="#" class="py-3 pl-2 mx-2 lg:mr-9 lg:pl-0">Tools</a>
             </div>
             <div class="flex flex-col lg:flex-row gap-4 lg:gap-7 w-full px-3 mt-4 lg:mt-0 lg:w-max lg:px-0">
-              <a
-                href="/authentication/login"
-                class="w-full lg:w-auto px-5 py-3 text-center rounded-lg flex lg:mx-auto bg-transparent transition ease-out duration-200 hover:bg-white hover:bg-opacity-30"
-              >
-                <span class="text-base w-full font-semibold text-white">Sign In</span>
-              </a>
+              <router-link to="/authentication/login">
+                <Button class="!text-white" label="Sign In" variant="link" />
+              </router-link>
             </div>
           </div>
         </div>
@@ -70,12 +67,8 @@
               <a href="#" class="py-3 px-5 rounded-lg bg-champ-green">
                 <span class="text-base text-center font-semibold text-dark-2">Get Started</span>
               </a>
-              <a
-                href="#"
-                class="py-3 px-5 rounded-lg bg-transparent transition ease-out duration-200 hover:bg-white hover:bg-opacity-30"
-              >
-                <span class="text-tile-grey font-normal underline text-base">Watch Stories</span>
-              </a>
+
+              <Button class="!text-white" label="Watch Stories" variant="link" />
             </div>
           </div>
         </div>

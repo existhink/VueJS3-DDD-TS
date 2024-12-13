@@ -10,6 +10,8 @@ declare module 'vue' {
     AppBaseFormGroup: typeof import('./app/components/base/AppBaseFormGroup.vue')['default']
     AppBaseSvg: typeof import('./app/components/base/AppBaseSvg.vue')['default']
     AppBaseToast: typeof import('./app/components/base/AppBaseToast.vue')['default']
+    Button: typeof import('primevue/button')['default']
+    InputNumber: typeof import('primevue/inputnumber')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
