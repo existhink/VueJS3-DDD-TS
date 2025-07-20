@@ -1,9 +1,3 @@
-<template>
-  <svg class="svg-icon" aria-hidden="true">
-    <use :href="symbolId" :fill="color" />
-  </svg>
-</template>
-
 <script setup lang="ts">
 /**
  * @description Define the props interface
@@ -29,6 +23,12 @@ const props = withDefaults(defineProps<IProps>(), {
  */
 const symbolId = computed(() => `#${props.prefix}-${props.name}`);
 </script>
+
+<template>
+  <svg class="svg-icon" aria-hidden="true">
+    <use :href="symbolId" :fill="color" />
+  </svg>
+</template>
 
 <style>
 .svg-icon {

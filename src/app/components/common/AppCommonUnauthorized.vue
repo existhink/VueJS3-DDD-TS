@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const onBack = () => {
+  router.push({ name: 'Dashboard' });
+};
+</script>
+
 <template>
   <section id="unauthorized-screen">
     <h1>Not Auhtorized</h1>
@@ -11,12 +20,3 @@
     </button>
   </section>
 </template>
-
-<script setup lang="ts">
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-const onBack = () => {
-  router.push({ name: 'Dashboard' });
-};
-</script>

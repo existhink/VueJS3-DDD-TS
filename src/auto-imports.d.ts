@@ -17,10 +17,20 @@ declare global {
   const LAYOUT_EMPTY: typeof import('./app/constants/layout.constant')['LAYOUT_EMPTY']
   const LAYOUT_OPTIONS: typeof import('./app/constants/layout.constant')['LAYOUT_OPTIONS']
   const LAYOUT_PUBLIC: typeof import('./app/constants/layout.constant')['LAYOUT_PUBLIC']
+  const REGEX_ANY_CHAR: typeof import('./app/constants/regex.constant')['REGEX_ANY_CHAR']
+  const REGEX_DIGIT: typeof import('./app/constants/regex.constant')['REGEX_DIGIT']
+  const REGEX_LOWERCASE: typeof import('./app/constants/regex.constant')['REGEX_LOWERCASE']
+  const REGEX_NO_PERIOD_OR_NEWLINE: typeof import('./app/constants/regex.constant')['REGEX_NO_PERIOD_OR_NEWLINE']
+  const REGEX_PASSWORD: typeof import('./app/constants/regex.constant')['REGEX_PASSWORD']
+  const REGEX_PHONE_CODE: typeof import('./app/constants/regex.constant')['REGEX_PHONE_CODE']
+  const REGEX_PHONE_NUMBER: typeof import('./app/constants/regex.constant')['REGEX_PHONE_NUMBER']
+  const REGEX_SPECIAL_CHAR: typeof import('./app/constants/regex.constant')['REGEX_SPECIAL_CHAR']
+  const REGEX_UPPERCASE: typeof import('./app/constants/regex.constant')['REGEX_UPPERCASE']
   const VALIDATION_MESSAGE: typeof import('./app/constants/validation.constant')['VALIDATION_MESSAGE']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
+  const debounce: typeof import('./app/helpers/debounce.helper')['debounce']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const effectScope: typeof import('vue')['effectScope']
@@ -72,6 +82,9 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useCurrencyFormat: typeof import('./app/composables/useText')['useCurrencyFormat']
+  const useFormValidateEach: typeof import('./app/composables/useValidateForm')['useFormValidateEach']
+  const useFormatDate: typeof import('./app/composables/useText')['useFormatDate']
+  const useFormatDateLocal: typeof import('./app/composables/useText')['useFormatDateLocal']
   const useHttpAbort: typeof import('./app/composables/useHttpAbort')['useHttpAbort']
   const useId: typeof import('vue')['useId']
   const useLink: typeof import('vue-router')['useLink']
@@ -83,7 +96,9 @@ declare global {
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
+  const useSnakeCase: typeof import('./app/composables/useText')['useSnakeCase']
   const useTemplateRef: typeof import('vue')['useTemplateRef']
+  const useTitleCaseWithSpaces: typeof import('./app/composables/useText')['useTitleCaseWithSpaces']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const watchPostEffect: typeof import('vue')['watchPostEffect']
@@ -92,7 +107,7 @@ declare global {
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
+  export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
   // @ts-ignore
   export type { LAYOUT_OPTIONS, LAYOUT_OPTIONS } from './app/constants/layout.constant'
@@ -116,10 +131,20 @@ declare module 'vue' {
     readonly LAYOUT_EMPTY: UnwrapRef<typeof import('./app/constants/layout.constant')['LAYOUT_EMPTY']>
     readonly LAYOUT_OPTIONS: UnwrapRef<typeof import('./app/constants/layout.constant')['LAYOUT_OPTIONS']>
     readonly LAYOUT_PUBLIC: UnwrapRef<typeof import('./app/constants/layout.constant')['LAYOUT_PUBLIC']>
+    readonly REGEX_ANY_CHAR: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_ANY_CHAR']>
+    readonly REGEX_DIGIT: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_DIGIT']>
+    readonly REGEX_LOWERCASE: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_LOWERCASE']>
+    readonly REGEX_NO_PERIOD_OR_NEWLINE: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_NO_PERIOD_OR_NEWLINE']>
+    readonly REGEX_PASSWORD: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_PASSWORD']>
+    readonly REGEX_PHONE_CODE: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_PHONE_CODE']>
+    readonly REGEX_PHONE_NUMBER: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_PHONE_NUMBER']>
+    readonly REGEX_SPECIAL_CHAR: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_SPECIAL_CHAR']>
+    readonly REGEX_UPPERCASE: UnwrapRef<typeof import('./app/constants/regex.constant')['REGEX_UPPERCASE']>
     readonly VALIDATION_MESSAGE: UnwrapRef<typeof import('./app/constants/validation.constant')['VALIDATION_MESSAGE']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly debounce: UnwrapRef<typeof import('./app/helpers/debounce.helper')['debounce']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
@@ -171,6 +196,9 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrencyFormat: UnwrapRef<typeof import('./app/composables/useText')['useCurrencyFormat']>
+    readonly useFormValidateEach: UnwrapRef<typeof import('./app/composables/useValidateForm')['useFormValidateEach']>
+    readonly useFormatDate: UnwrapRef<typeof import('./app/composables/useText')['useFormatDate']>
+    readonly useFormatDateLocal: UnwrapRef<typeof import('./app/composables/useText')['useFormatDateLocal']>
     readonly useHttpAbort: UnwrapRef<typeof import('./app/composables/useHttpAbort')['useHttpAbort']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
@@ -182,7 +210,9 @@ declare module 'vue' {
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSnakeCase: UnwrapRef<typeof import('./app/composables/useText')['useSnakeCase']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
+    readonly useTitleCaseWithSpaces: UnwrapRef<typeof import('./app/composables/useText')['useTitleCaseWithSpaces']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>

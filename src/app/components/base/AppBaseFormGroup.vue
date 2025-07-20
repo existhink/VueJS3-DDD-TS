@@ -1,15 +1,3 @@
-<template>
-  <div id="form-group" :class="{ [spacingBottom]: !isNotHaveSpacing }">
-    <label v-if="isNameAsLabel" :class="classLabel" :for="labelFor">{{ name }}</label>
-    <slot
-      :isError="!!error"
-      :isValid="isInvalid"
-      :classes="{ 'border border-solid border-red-600': !!error, 'p-success': !isInvalid }"
-    />
-    <small class="text-red-600">{{ message }}</small>
-  </div>
-</template>
-
 <script setup lang="ts">
 // Constants
 import { BaseValidation, ErrorObject } from '@vuelidate/core';
@@ -71,3 +59,15 @@ const message: ComputedRef<string> = computed(() => {
   });
 });
 </script>
+
+<template>
+  <div id="form-group" :class="{ [spacingBottom]: !isNotHaveSpacing }">
+    <label v-if="isNameAsLabel" :class="classLabel" :for="labelFor">{{ name }}</label>
+    <slot
+      :is-error="!!error"
+      :is-valid="isInvalid"
+      :classes="{ 'border border-solid border-red-600': !!error, 'p-success': !isInvalid }"
+    />
+    <small class="text-red-600">{{ message }}</small>
+  </div>
+</template>
