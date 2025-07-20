@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <section id="not-found" class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
     <div class="text-center">
@@ -17,5 +19,3 @@
     </div>
   </section>
 </template>
-
-<script setup lang="ts"></script>

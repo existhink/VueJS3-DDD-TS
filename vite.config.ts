@@ -3,6 +3,9 @@ import { fileURLToPath } from 'node:url';
 // Path
 import path from 'path';
 
+// Tailwind
+import tailwindcss from '@tailwindcss/vite';
+
 // Vite
 import { defineConfig } from 'vite';
 
@@ -94,7 +97,7 @@ export default defineConfig({
         componentName => {
           // ? We need to check, if the component name is includes AppBase prefix. So we can resolve it to the correct path to the component (src/app/components/base)
           if (componentName.startsWith('AppBase')) {
-            return path.resolve(__dirname, `src/app/components/base/${componentName}.vue`);
+            return `@components/base/${componentName}.vue`;
           }
         },
         PrimeVueResolver(),
@@ -108,32 +111,9 @@ export default defineConfig({
         },
       ],
     }),
-    imagemin({
-      // Default mode sharp. support squoosh and sharp
-      mode: 'squoosh',
-      beforeBundle: true,
-      // Default configuration options for compressing different pictures
-      compress: {
-        jpg: {
-          quality: 10,
-        },
-        jpeg: {
-          quality: 10,
-        },
-        png: {
-          quality: 10,
-        },
-        webp: {
-          quality: 10,
-        },
-      },
-      conversion: [
-        { from: 'jpeg', to: 'webp' },
-        { from: 'png', to: 'webp' },
-        { from: 'JPG', to: 'jpeg' },
-      ],
-    }),
+    imagemin(),
     removeConsole(),
+    tailwindcss(),
     viteCompression(),
     vue(),
   ],

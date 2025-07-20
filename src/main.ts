@@ -14,12 +14,10 @@ import eventBus from './plugins/mitt';
 
 // Primevue
 import PrimeVue from 'primevue/config';
-import ConfirmationService from 'primevue/confirmationservice';
-
-// Primevue Theme
-import Aura from '@primevue/themes/aura';
+import Aura from '@primeuix/themes/aura';
 
 // Stylesheets
+import 'primeicons/primeicons.css';
 import './style.css';
 
 // SVG Icons
@@ -29,17 +27,24 @@ const initialize = async () => {
   const app = createApp(App);
   const router = await loadAllRoutes();
 
-  // Use everything what we have
-  app.use(ConfirmationService);
-  app.use(pinia);
+  /**
+   * @description Initialize primevue and set the configurations on it
+   */
   app.use(PrimeVue, {
     theme: {
       preset: Aura,
       options: {
-        darkModeSelector: '.my-app-dark',
+        darkModeSelector: 'class',
+        cssLayer: {
+          name: 'primevue',
+          order: 'theme, base, primevue',
+        },
       },
     },
   });
+
+  // Use everything what we have
+  app.use(pinia);
   app.use(router);
 
   // Register global event bus

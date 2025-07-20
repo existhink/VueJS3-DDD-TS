@@ -1,3 +1,14 @@
+<script setup lang="ts">
+// Services
+import { useAuthenticationLoginService } from '../services/authentication-login.service';
+
+/**
+ * @description Destructure all the data and methods what we need
+ */
+const { authentication_formData, authentication_formValidations, authentication_onSubmit } =
+  useAuthenticationLoginService();
+</script>
+
 <template>
   <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -15,23 +26,23 @@
       <form class="space-y-6" action="#" method="POST" @submit.prevent="authentication_onSubmit()">
         <div>
           <AppBaseFormGroup
+            v-slot="{ classes }"
             class-label="block text-sm font-medium leading-6 text-gray-900"
             is-name-as-label
             label-for="username"
             name="Username"
             :validators="authentication_formValidations.username"
-            v-slot="{ classes }"
           >
             <div class="mt-2">
               <input
                 id="username"
+                v-model="authentication_formData.username"
                 name="username"
                 type="text"
-                v-model="authentication_formData.username"
                 v-bind="{ ...useBindStateForm('John Doe') }"
-                v-on="useListenerForm(authentication_formValidations, 'username')"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 :class="{ ...classes }"
+                v-on="useListenerForm(authentication_formValidations, 'username')"
               />
             </div>
           </AppBaseFormGroup>
@@ -39,9 +50,9 @@
 
         <div>
           <AppBaseFormGroup
+            v-slot="{ classes }"
             name="Password"
             :validators="authentication_formValidations.password"
-            v-slot="{ classes }"
           >
             <div class="flex items-center justify-between">
               <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
@@ -53,13 +64,13 @@
             <div class="mt-2">
               <input
                 id="password"
+                v-model="authentication_formData.password"
                 :class="{ ...classes }"
                 name="password"
                 type="password"
-                v-model="authentication_formData.password"
                 v-bind="{ ...useBindStateForm('*********') }"
-                v-on="useListenerForm(authentication_formValidations, 'password')"
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                v-on="useListenerForm(authentication_formValidations, 'password')"
               />
             </div>
           </AppBaseFormGroup>
@@ -85,14 +96,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-// Services
-import { useAuthenticationLoginService } from '../services/useAuthenticationLogin.service';
-
-/**
- * @description Destructure all the data and methods what we need
- */
-const { authentication_formData, authentication_formValidations, authentication_onSubmit } =
-  useAuthenticationLoginService();
-</script>

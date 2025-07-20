@@ -1,2 +1,2 @@
 export * from './authentication.constant';
-export * from './authenticationApi.constant';
+export * from './authentication-api.constant';

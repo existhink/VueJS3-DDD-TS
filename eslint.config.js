@@ -39,11 +39,20 @@ export default [
       'no-unsafe-negation': 'error',
       'no-unsafe-optional-chaining': 'error',
       'no-useless-catch': 'error',
-      'no-use-before-define': 'error',
-      'vue/component-tags-order': [
+      'vue/attribute-hyphenation': ['error', 'always'],
+      'vue/attributes-order': 'error',
+      'vue/block-order': [
         'error',
         {
-          order: ['template', 'script', 'style'],
+          order: ['script', 'template', 'style'],
+        },
+      ],
+      'vue/html-self-closing': ['off'],
+      'vue/multi-word-component-names': ['off'],
+      'vue/no-mutating-props': [
+        'error',
+        {
+          shallowOnly: true,
         },
       ],
     },

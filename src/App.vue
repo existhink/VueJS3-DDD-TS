@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const route = useRoute();
+
+const layout = computed(() => {
+  return route.meta.layout ?? 'AppLayoutEmpty';
+});
+</script>
+
 <template>
   <section id="root" class="relative inset-0 z-0">
     <component :is="layout" />
@@ -7,11 +15,3 @@
     </Teleport>
   </section>
 </template>
-
-<script setup lang="ts">
-const route = useRoute();
-
-const layout = computed(() => {
-  return route.meta.layout ?? 'AppLayoutEmpty';
-});
-</script>

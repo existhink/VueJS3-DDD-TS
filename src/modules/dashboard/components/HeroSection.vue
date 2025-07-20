@@ -29,7 +29,7 @@
             </button>
           </div>
         </div>
-        <div class="flex w-full mx-auto mobile-menu lg:block" id="navigation">
+        <div id="navigation" class="flex w-full mx-auto mobile-menu lg:block">
           <div
             class="flex flex-col items-baseline justify-between mx-auto mt-6 lg:flex-row lg:items-center lg:mt-0"
           >
